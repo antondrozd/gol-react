@@ -1,7 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { Provider } from 'react-redux';
+
+import store from './store';
 
 import Game from './Game.jsx';
 
-ReactDOM.render(<Game />, document.getElementById('root'));
+import './index.css';
+
+ReactDOM.render(
+    <Provider store={store}>
+        <Game />
+    </Provider>,
+    document.getElementById('root')
+);

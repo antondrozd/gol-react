@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import Play from './Play';
 import Reset from './Reset';
 import Randomize from './Randomize';
 import SpeedRange from './SpeedRange';
@@ -24,14 +25,7 @@ export default class Controls extends Component {
     render() {
         return (
             <div className="controls">
-                <button
-                    id="play-button"
-                    className="material-icons"
-                    onClick={this.handlePlayToggle}
-                >
-                    play_arrow
-                </button>
-               
+                <Play />              
                 <Reset onClick={this.reset} />
                 <Randomize onClick={this.randomize} />
                 <SpeedRange onChange={this.changeSpeed} />
