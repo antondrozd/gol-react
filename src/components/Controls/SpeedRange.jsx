@@ -5,10 +5,10 @@ export default function SpeedRange({ onChange }) {
         <input
             id="speed-slider"
             type="range"
-            min="100"
-            max="1000"
-            step="50"
-            // dafaultValue={100}
+            min={100}
+            max={1000}
+            step={50}
+            // value={100}
             onChange={onChange}
         />
     );

@@ -1,34 +1,29 @@
 import React, { Component } from 'react';
 
-import Play from './Play';
-import Reset from './Reset';
-import Randomize from './Randomize';
 import SpeedRange from './SpeedRange';
+import Play from './Play';
+
+import ResetContainer from '../../containers/Controls/ResetContainer';
+import RandomizeContainer from '../../containers/Controls/RandomizeContainer';
 
 export default class Controls extends Component {
-    handlePlayToggle = () => {};
-
-    reset = () => {
-        console.log('reset');
-    };
-
-    randomize = () => {
-        console.log('random');
-    };
-
-    changeSpeed = ({ target }) => {
+    handleSpeedChange = ({ target }) => {
         const speed = target.value;
+        console.log(speed);
 
-        console.log(`change speed to ${speed}`);
+        this.props.handleSpeedChange(+speed);
     };
 
     render() {
         return (
             <div className="controls">
-                <Play />              
-                <Reset onClick={this.reset} />
-                <Randomize onClick={this.randomize} />
-                <SpeedRange onChange={this.changeSpeed} />
+                <Play
+                    onPlay={this.props.handlePlay}
+                    isPlaying={this.props.isPlaying}
+                />
+                <ResetContainer />
+                <RandomizeContainer />
+                <SpeedRange onChange={this.handleSpeedChange} />
             </div>
         );
     }

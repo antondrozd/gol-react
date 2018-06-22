@@ -4,11 +4,7 @@ import Cell from './Cell';
 
 export default class Grid extends Component {
     get size() {
-        let size = 0;
-
-        this.props.cells.forEach(() => size++);
-
-        return size;
+        return this.props.cells.length;
     }
 
     handleCellClick = (row, col) => {

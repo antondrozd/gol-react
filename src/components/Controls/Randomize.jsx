@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default function Randomize({ onClick }) {
+export default function Randomize(props) {
     return (
         <button
             id="randomize-button"
             className="material-icons"
-            onClick={onClick}
+            onClick={props.onRandomize}
         >
             transform
         </button>

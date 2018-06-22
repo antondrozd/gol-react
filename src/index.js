@@ -4,13 +4,14 @@ import { Provider } from 'react-redux';
 
 import store from './store';
 
-import Game from './Game.jsx';
+// import Game from './Game.jsx';
 
 import './index.css';
+import GameContainer from './containers/GameContainer';
 
 ReactDOM.render(
     <Provider store={store}>
-        <Game />
+        <GameContainer />
     </Provider>,
     document.getElementById('root')
 );
