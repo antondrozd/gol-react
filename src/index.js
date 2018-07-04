@@ -4,10 +4,9 @@ import { Provider } from 'react-redux';
 
 import store from './store';
 
-// import Game from './Game.jsx';
+import GameContainer from './containers/GameContainer';
 
 import './index.css';
-import GameContainer from './containers/GameContainer';
 
 ReactDOM.render(
     <Provider store={store}>

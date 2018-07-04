@@ -9,7 +9,6 @@ import RandomizeContainer from '../../containers/Controls/RandomizeContainer';
 export default class Controls extends Component {
     handleSpeedChange = ({ target }) => {
         const speed = target.value;
-        console.log(speed);
 
         this.props.handleSpeedChange(+speed);
     };

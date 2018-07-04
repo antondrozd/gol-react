@@ -30,8 +30,8 @@ export function computeRandomGrid(size) {
     return grid;
 }
 
-export function computeNextGrid(grid) {
-    const size = grid.length;
+export function computeNextGrid(previosGrid) {
+    const size = previosGrid.length;
 
     let nextGrid = computeInitialGrid(size);
 
@@ -39,12 +39,12 @@ export function computeNextGrid(grid) {
         let count = 0;
 
         for (let r = -1; r <= 1; r++) {
-            if (grid[row + r] === undefined) continue;
+            if (previosGrid[row + r] === undefined) continue;
 
             for (let c = -1; c <= 1; c++) {
                 if (r === 0 && c === 0) continue;
 
-                if (grid[row + r][col + c]) {
+                if (previosGrid[row + r][col + c]) {
                     count += 1;
                 }
             }
@@ -58,7 +58,7 @@ export function computeNextGrid(grid) {
             const aliveNeighbors = countAliveNeighbors(row, col);
 
             if (
-                (grid[row][col] && aliveNeighbors === 2) ||
+                (previosGrid[row][col] && aliveNeighbors === 2) ||
                 aliveNeighbors === 3
             ) {
                 nextGrid[row][col] = true;
